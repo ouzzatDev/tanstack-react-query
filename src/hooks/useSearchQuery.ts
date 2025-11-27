@@ -1,10 +1,11 @@
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { DataItem } from "../types";
 import axios from "axios";
+import config from "../config";
 
 const fetchData = async (q: string): Promise<DataItem[]> => {
   const result = await axios.get<DataItem[]>(
-    `http://localhost:5005/posts?q=${q}`
+    `${config.apiUrl}/posts?q=${q}`
   );
   return result.data;
 };

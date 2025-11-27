@@ -5,9 +5,10 @@ import {
   useQueryClient,
   UseQueryResult,
 } from "@tanstack/react-query";
+import config from "../config";
 
 const fetchData = async (id: string): Promise<DataItem> => {
-  const result = await axios.get<DataItem>(`http://localhost:5005/posts/${id}`);
+  const result = await axios.get<DataItem>(`${config.apiUrl}/posts/${id}`);
   return result.data;
 };
 

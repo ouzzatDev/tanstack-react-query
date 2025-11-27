@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 import { DataItem, PostTypeStatus } from "../types";
+import config from "../config";
 
 export const fetchPosts = async (
   selectedPostStatus: PostTypeStatus,
@@ -8,12 +9,12 @@ export const fetchPosts = async (
 ): Promise<DataItem[]> => {
   if (selectedPostStatus === "all") {
     const result = await axios.get<DataItem[]>(
-      `http://localhost:5005/posts?_page=${paginate}&_limit=5`
+      `${config.apiUrl}/posts?_page=${paginate}&_limit=5`
     );
     return result.data;
   } else {
     const result = await axios.get<DataItem[]>(
-      `http://localhost:5005/posts?status=${selectedPostStatus}`
+      `${config.apiUrl}/posts?status=${selectedPostStatus}`
     );
     return result.data;
   }

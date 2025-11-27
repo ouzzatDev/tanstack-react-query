@@ -5,10 +5,11 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { CommentPost, CommentResponse } from "../types";
+import config from "../config";
 
 const requestData = async (data: CommentPost): Promise<CommentResponse> => {
   const result = await axios.post<CommentResponse>(
-    "http://localhost:5005/comments",
+    `${config.apiUrl}/comments`,
     data
   );
 

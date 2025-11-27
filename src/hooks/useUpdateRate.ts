@@ -6,10 +6,11 @@ import {
 } from "@tanstack/react-query";
 
 import { DataItem, TopRatePost } from "../types";
+import config from "../config";
 
 const updateRate = async (rate: TopRatePost): Promise<DataItem> => {
   const result = await axios.patch<DataItem>(
-    `http://localhost:5005/posts/${rate.postId}`,
+    `${config.apiUrl}/posts/${rate.postId}`,
     { topRate: rate.rateValue }
   );
   return result.data;
