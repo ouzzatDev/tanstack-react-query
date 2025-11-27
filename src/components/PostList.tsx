@@ -7,7 +7,7 @@ import useUpdateRate from "../hooks/useUpdateRate";
 import useRemovePost from "../hooks/useRemovePost";
 import { fetchPosts } from "../hooks/useGetPosts";
 
-import { PostTypeStatus } from "../types/index";
+import { DataItem, PostTypeStatus } from "../types/index";
 import { Table, Form, Button, ButtonGroup } from "react-bootstrap";
 
 interface PostListProps {
@@ -32,6 +32,14 @@ const PostList = ({ selectedPostStatus, searchQuery }: PostListProps) => {
   const deletePost = useRemovePost();
 
   const searchData = useSearchQuery(searchQuery);
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>, el: DataItem) => {
+    updateRate.mutate({
+      postId: el.id,
+      rateValue: e.target.checked,
+      pageNumber: paginate,
+    });
+  };
 
   useEffect(() => {
     const nextPage = paginate + 1;
@@ -87,13 +95,7 @@ const PostList = ({ selectedPostStatus, searchQuery }: PostListProps) => {
                 <td style={{ textAlign: "center" }}>
                   <Form.Check // prettier-ignore
                     type="switch"
-                    onChange={(e) =>
-                      updateRate.mutate({
-                        postId: el.id,
-                        rateValue: e.target.checked,
-                        pageNumber: paginate,
-                      })
-                    }
+                    onChange={(e) => onChangeHandler(e, el)}
                     checked={el.topRate}
                     disabled={selectedPostStatus !== "all"}
                   />

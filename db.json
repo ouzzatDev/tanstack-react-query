@@ -6,7 +6,7 @@
       "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
       "status": "publish",
-      "topRate": true
+      "topRate": false
     },
     {
       "userId": 1,
@@ -30,7 +30,7 @@
       "title": "eum et est occaecati",
       "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
       "status": "publish",
-      "topRate": true
+      "topRate": false
     },
     {
       "userId": 1,
@@ -38,7 +38,7 @@
       "title": "nesciunt quas odio",
       "body": "repudiandae veniam quaerat sunt sed alias aut fugiat sit autem sed est voluptatem omnis possimus esse voluptatibus quis est aut tenetur dolor neque",
       "status": "draft",
-      "topRate": false
+      "topRate": true
     },
     {
       "userId": 1,
@@ -53,7 +53,8 @@
       "id": 7,
       "title": "magnam facilis autem",
       "body": "dolore placeat quibusdam ea quo vitae magni quis enim qui quis quo nemo aut saepe quidem repellat excepturi ut quia sunt ut sequi eos ea sed quas",
-      "status": false
+      "status": false,
+      "topRate": true
     },
     {
       "userId": 1,
@@ -69,7 +70,7 @@
       "title": "nesciunt iure omnis dolorem tempora et accusantium",
       "body": "consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas",
       "status": "block",
-      "topRate": false
+      "topRate": true
     },
     {
       "userId": 1,
@@ -77,7 +78,7 @@
       "title": "optio molestias id quia eum",
       "body": "quo et expedita modi cum officia vel magni doloribus qui repudiandae vero nisi sit quos veniam quod sed accusamus veritatis error",
       "status": "block",
-      "topRate": false
+      "topRate": true
     },
     {
       "userId": 2,
@@ -101,7 +102,7 @@
       "title": "dolorum ut in voluptas mollitia et saepe quo animi",
       "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque iste corrupti reiciendis voluptatem eius rerum  sit cumque quod eligendi laborum minima perferendis recusandae assumenda consectetur porro architecto ipsum ipsam",
       "status": "block",
-      "topRate": false
+      "topRate": true
     },
     {
       "userId": 2,

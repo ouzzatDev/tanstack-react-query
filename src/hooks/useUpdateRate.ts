@@ -16,45 +16,46 @@ const updateRate = async (rate: TopRatePost): Promise<DataItem> => {
   return result.data;
 };
 
-const useUpdateRate = (): UseMutationResult<
-  DataItem,
-  AxiosError,
-  TopRatePost
-> => {
+const useUpdateRate = (): UseMutationResult<DataItem, AxiosError, TopRatePost> => {
   const queryClient = useQueryClient();
+
   return useMutation({
     mutationFn: updateRate,
-    onMutate: (values) => {
-      const oldData = queryClient.getQueryData([
-        "posts",
-        { paginate: values.pageNumber, selectedStatus: "all" },
-      ]);
 
-      queryClient.setQueryData(
-        ["posts", { paginate: values.pageNumber, selectedStatus: "all" }],
-        (prevState: DataItem[]) =>
-          prevState.map((el) => {
-            if (el.id === values.postId) {
-              return { ...el, topRate: values.rateValue };
-            } else {
-              return el;
-            }
-          })
+    onMutate: (values) => {
+      const queryKey = [
+        "posts",
+        { selectedStatus: "all", paginate: values.pageNumber }
+      ];
+
+      const oldData = queryClient.getQueryData<DataItem[]>(queryKey);
+
+      queryClient.setQueryData<DataItem[]>(
+        queryKey,
+        (prev: DataItem[] | undefined) =>
+          (prev ?? []).map((post: DataItem) =>
+            post.id === values.postId
+              ? { ...post, topRate: values.rateValue }
+              : post
+          )
       );
 
       return () => {
-        queryClient.setQueryData(
-          ["posts", { paginate: values.pageNumber, selectedStatus: "all" }],
-          oldData
-        );
+        queryClient.setQueryData(queryKey, oldData);
       };
     },
-    onError: (_, __, rollBack) => {
-      if (rollBack) {
-        rollBack();
-      }
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: ["posts"],
+      });
+    },
+
+    onError: (_error, _values, rollback) => {
+      rollback?.();
     },
   });
 };
+
 
 export default useUpdateRate;
