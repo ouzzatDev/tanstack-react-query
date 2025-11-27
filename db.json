@@ -5,7 +5,7 @@
       "id": 1,
       "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
       "body": "quia et suscipit suscipit recusandae consequuntur expedita et cum reprehenderit molestiae ut ut quas totam nostrum rerum est autem sunt rem eveniet architecto",
-      "status": "published",
+      "status": "publish",
       "topRate": true
     },
     {
@@ -13,7 +13,7 @@
       "id": 2,
       "title": "qui est esse",
       "body": "est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla",
-      "status": "published",
+      "status": "publish",
       "topRate": false
     },
     {
@@ -21,7 +21,7 @@
       "id": 3,
       "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
       "body": "et iusto sed quo iure voluptatem occaecati omnis eligendi aut ad voluptatem doloribus vel accusantium quis pariatur molestiae porro eius odio et labore et velit aut",
-      "status": "published",
+      "status": "publish",
       "topRate": false
     },
     {
@@ -29,7 +29,7 @@
       "id": 4,
       "title": "eum et est occaecati",
       "body": "ullam et saepe reiciendis voluptatem adipisci sit amet autem assumenda provident rerum culpa quis hic commodi nesciunt rem tenetur doloremque ipsam iure quis sunt voluptatem rerum illo velit",
-      "status": "published",
+      "status": "publish",
       "topRate": true
     },
     {
@@ -69,7 +69,7 @@
       "title": "nesciunt iure omnis dolorem tempora et accusantium",
       "body": "consectetur animi nesciunt iure dolore enim quia ad veniam autem ut quam aut nobis et est aut quod aut provident voluptas autem voluptas",
       "status": "block",
-      "topRate": true
+      "topRate": false
     },
     {
       "userId": 1,
@@ -110,15 +110,28 @@
       "body": "fuga et accusamus dolorum perferendis illo voluptas non doloremque neque facere ad qui dolorum molestiae beatae sed aut voluptas totam sit illum",
       "status": "block",
       "topRate": false
-    },
-    {
-      "userId": 2,
-      "id": 15,
-      "title": "eveniet quod temporibus",
-      "body": "reprehenderit quos placeat velit minima officia dolores impedit repudiandae molestiae nam voluptas recusandae quis delectus officiis harum fugiat vitae",
-      "status": "draft",
-      "topRate": false
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "body": "Test comment",
+      "post_id": 1,
+      "id": 1
+    },
+    {
+      "body": "Hello ",
+      "post_id": 1,
+      "id": 2
+    },
+    {
+      "body": "Boom\n",
+      "post_id": 1,
+      "id": 3
+    },
+    {
+      "body": "This 4th comment\n",
+      "post_id": 1,
+      "id": 4
+    }
+  ]
 }
